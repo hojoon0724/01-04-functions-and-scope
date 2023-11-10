@@ -48,3 +48,19 @@ checkPalindrome("Github");
 checkPalindrome("repaper");
 checkPalindrome("my gym");
 checkPalindrome("taco cat");
+
+// -----------------------------------------------------
+// Sum Array
+// -----------------------------------------------------
+//? The function takes an array as argument. Function returns the sum of numbers. Use 'for' loop.
+{
+  function sumArray() {
+    let answer = 0;
+    for (arg of arguments) {
+      answer = answer + arg;
+    }
+    console.log(answer);
+  }
+
+  sumArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+}
