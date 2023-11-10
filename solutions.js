@@ -119,3 +119,33 @@ checkPalindrome("taco cat");
   console.log("Prime Number List");
   printPrimes(50);
 }
+
+// -----------------------------------------------------
+// Rock Paper Scissors
+// -----------------------------------------------------
+
+{
+  const rpsKey = ["rock", "paper", "scissor"];
+  function randomMove() {
+    let choice = Math.floor(Math.random() * 3);
+    // console.log(choice);
+    return choice;
+  }
+
+  function rockPaperScissors() {
+    let computersMove = randomMove();
+    console.log("computer chose", rpsKey[computersMove]);
+    let usersMove = randomMove();
+    console.log("user chose", rpsKey[usersMove]);
+    if (computersMove == usersMove) {
+      console.log("draw");
+    } else {
+      if (computersMove == (usersMove + 2) % rpsKey.length) {
+        console.log("user wins");
+      } else {
+        console.log("computer wins");
+      }
+    }
+  }
+  rockPaperScissors();
+}
