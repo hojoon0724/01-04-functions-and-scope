@@ -69,10 +69,10 @@ checkPalindrome("taco cat");
 // Prime Numbers
 // -----------------------------------------------------
 {
-  function checkPrime(num) {
+  function checkPrimeMath(num) {
     let maxCheckNum = Math.ceil(Math.sqrt(num));
     //let maxCheckNum = num / 2 - 1;
-    console.log("max check", maxCheckNum);
+    //console.log("max check", maxCheckNum);
     for (i = 2; i <= maxCheckNum; i++) {
       // show division number
       // console.log("div by", i);
@@ -80,20 +80,42 @@ checkPalindrome("taco cat");
       // console.log("remainder", num % i);
       // if remainder is 0, then fail
       if (num % i == 0) {
-        console.log("div by", i, "reminder", num % i, ": fail");
-        console.log(num, "is NOT a prime");
+        //console.log("div by", i, "reminder", num % i, ": fail");
+        // console.log(num, "is NOT a prime");
+        return false;
         break;
       } else {
         if (i == maxCheckNum) {
-          console.log("div by", i, "remainder", num % i, "passed everything");
-          console.log(num, "IS a prime");
+          //console.log("div by", i, "remainder", num % i, "passed everything");
+          // console.log(num, "IS a prime");
+          return true;
         } else {
-          console.log("div by", i, "reminder", num % i, ": pass");
+          //console.log("div by", i, "reminder", num % i, ": pass");
         }
       }
     }
   }
+  function checkPrime(num) {
+    const isPrime = checkPrimeMath(num);
+    if (isPrime) {
+      console.log(num, "is a prime");
+    } else {
+      console.log(num, "is NOT a prime");
+    }
+  }
+
   checkPrime(77);
   checkPrime(97843);
   checkPrime(99);
+
+  function printPrimes(primeAmount) {
+    for (a = 1; a <= primeAmount; a++) {
+      if (checkPrimeMath(a) == true) {
+        console.log(a);
+      }
+    }
+  }
+
+  console.log("Prime Number List");
+  printPrimes(50);
 }
