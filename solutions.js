@@ -64,3 +64,36 @@ checkPalindrome("taco cat");
 
   sumArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 }
+
+// -----------------------------------------------------
+// Prime Numbers
+// -----------------------------------------------------
+{
+  function checkPrime(num) {
+    let maxCheckNum = Math.ceil(Math.sqrt(num));
+    //let maxCheckNum = num / 2 - 1;
+    console.log("max check", maxCheckNum);
+    for (i = 2; i <= maxCheckNum; i++) {
+      // show division number
+      // console.log("div by", i);
+      // show remainder
+      // console.log("remainder", num % i);
+      // if remainder is 0, then fail
+      if (num % i == 0) {
+        console.log("div by", i, "reminder", num % i, ": fail");
+        console.log(num, "is NOT a prime");
+        break;
+      } else {
+        if (i == maxCheckNum) {
+          console.log("div by", i, "remainder", num % i, "passed everything");
+          console.log(num, "IS a prime");
+        } else {
+          console.log("div by", i, "reminder", num % i, ": pass");
+        }
+      }
+    }
+  }
+  checkPrime(77);
+  checkPrime(97843);
+  checkPrime(99);
+}
