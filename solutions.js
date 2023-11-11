@@ -149,3 +149,23 @@ checkPalindrome("taco cat");
   }
   rockPaperScissors();
 }
+
+// -----------------------------------------------------
+// Digit Sum
+// -----------------------------------------------------
+
+const sumDigits = (numberToAdd) => {
+  const numberAsString = numberToAdd.toString();
+  const numberArray = numberAsString.split("");
+  console.log(numberArray);
+  const arrayMaxNum = numberArray.length;
+  console.log(arrayMaxNum);
+  let answer = 0;
+  for (i = 0; i < arrayMaxNum; i++) {
+    console.log(Number(numberArray[i]));
+    answer += Number(numberArray[i]);
+  }
+  console.log(`answer is ${answer}`);
+};
+
+sumDigits(12345);
