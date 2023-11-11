@@ -157,15 +157,22 @@ checkPalindrome("taco cat");
 const sumDigits = (numberToAdd) => {
   const numberAsString = numberToAdd.toString();
   const numberArray = numberAsString.split("");
-  console.log(numberArray);
   const arrayMaxNum = numberArray.length;
-  console.log(arrayMaxNum);
   let answer = 0;
   for (i = 0; i < arrayMaxNum; i++) {
-    console.log(Number(numberArray[i]));
     answer += Number(numberArray[i]);
   }
-  console.log(`answer is ${answer}`);
+  console.log(`Sum of the digits in ${numberToAdd} is ${answer}`);
 };
 
 sumDigits(12345);
+
+function findHypotenuse(sideA, sideB) {
+  let sideASquared = sideA ** 2;
+  let sideBSquared = sideB ** 2;
+  let sideCSquared = sideASquared + sideBSquared;
+  let hypotenuse = Math.sqrt(sideCSquared);
+  console.log(hypotenuse);
+}
+
+findHypotenuse(3, 4);
